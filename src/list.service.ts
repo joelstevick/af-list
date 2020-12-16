@@ -17,6 +17,10 @@ export class ListService {
   }
 
   async findById(id: string): Promise<List> {
-    return lists.find(l => l.id === id);
+    return lists.find((l) => l.id === id);
+  }
+
+  async findByAll(): Promise<List[]> {
+    return lists;
   }
 }

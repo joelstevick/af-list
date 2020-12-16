@@ -11,6 +11,11 @@ export class ListResolvers {
     return this.listService.findById(id);
   }
 
+  @Query((returns) => [List])
+  async getAllLists(): Promise<List[]> {
+    return this.listService.findByAll();
+  }
+
   @ResolveReference()
   async resolveReference(reference: {
     __typename: string;
