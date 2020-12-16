@@ -20,7 +20,7 @@ export class ListService {
     return lists.find((l) => l.id === id);
   }
 
-  async findByAll(): Promise<List[]> {
+  async findAll(): Promise<List[]> {
     return lists;
   }
 }

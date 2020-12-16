@@ -19,7 +19,7 @@ export class ListResolvers {
 
   @Query((returns) => [List])
   async getAllLists(): Promise<List[]> {
-    return this.listService.findByAll();
+    return this.listService.findAll();
   }
 
   @Mutation((returns) => List)
