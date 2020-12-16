@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ListService } from './list/list.service';
+import { ListService } from './list.service';
 
 @Module({
   imports: [],
