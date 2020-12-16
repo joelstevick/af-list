@@ -1,4 +1,10 @@
-import { Args, Query, Resolver, ResolveReference } from '@nestjs/graphql';
+import {
+  Args,
+  Mutation,
+  Query,
+  Resolver,
+  ResolveReference,
+} from '@nestjs/graphql';
 import { List } from './list.entity';
 import { ListService } from './list.service';
 
@@ -14,6 +20,11 @@ export class ListResolvers {
   @Query((returns) => [List])
   async getAllLists(): Promise<List[]> {
     return this.listService.findByAll();
+  }
+
+  @Mutation((returns) => List)
+  async createList(@Args({ name: 'name' }) name: string) {
+    return this.listService.create(name);
   }
 
   @ResolveReference()
